@@ -1,0 +1,19 @@
+{
+  "name": "mikecarretta",
+  "version": "0.0.1",
+  "description": "GitHub Website",
+  "keywords": ["Front", "End", "Development", "Learning"],
+  "author": "Mike Carretta",
+  "license": "MIT",
+  "dependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.5.0",
+    "bower": "*",
+    "grunt-exec": "*"
+  }
+}
