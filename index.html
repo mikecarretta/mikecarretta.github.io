@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/css/app.min.css">
     <!--
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
 
     [if lt IE 9]>
       <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
@@ -21,17 +20,44 @@
 <section class="brand">
   <div class="container">
     <div class="row">
+      <div class="col-md-8 col-md-offset-2">
       <hgroup>
         <h1>Mike Carretta</h1>
         <h2>Learning Front End Development</h2>
       </hgroup>
+      </div>
     </div>
   </div>
 </section>
 
+<section class="github-projects">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <ul class="records"></ul>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script id="all-records" type="text/x-handlebars-template">
+  {{#each this}}
+    <li>
+      <h3><a href="{{url}}">{{name}}</a></h3>
+      <p>{{description}}</p>
+      {{#empty site }}
+        <p><a href="{{site}}">{{site}}</a></p>
+      {{/empty}}
+    </li>
+  {{/each}}
+</script>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+
+<script type="text/javascript" src="assets/js/app.min.js"></script>
 
 </body>
 </html>
