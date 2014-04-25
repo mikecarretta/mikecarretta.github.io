@@ -5,24 +5,16 @@
 * Description
 */
 angular.module('gitApp.services', [])
-.factory('GitHubApiRepos', ['$q', '$http', function($q, $http){
-  var getGitHubUser = function(name) {
-  var deferred = $q.defer();
-
-  $http.get('https://api.github.com/users/' + name + '/repos')
-    .success(function(data){
-      deferred.resolve(data);
-    })
-    .error(function(){
-      deferred.reject(reason);
-    });
-    return deferred.promise;
-  };
+.factory('GitHubApiRepos', ['$http', function($http) {
   return {
-    getGitHubUser: getGitHubUser
-  }
-}]).
-factory('myHttpInterceptor', ['$q', '$window', function ($q, $window) {
+    getGitHubUser: function() {
+      return $http({
+        url: 'https://api.github.com/users/mikecarretta/repos'
+      })
+    }
+  };
+}])
+.factory('myHttpInterceptor', ['$q', '$window', function ($q, $window) {
   return function (promise) {
     return promise.then(function (response) {
       $("#spinner").hide();

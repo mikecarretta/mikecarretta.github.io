@@ -5,6 +5,9 @@
 * Description
 */
 angular.module('gitApp.controllers', [])
-.controller('GitsController', ['$scope', 'GitHubApiRepos', function($scope, GitHubApiRepos){
-  $scope.gitRepos = GitHubApiRepos.getGitHubUser('mikecarretta');
+.controller('GitsController', ['$scope', 'GitHubApiRepos',
+    function($scope, GitHubApiRepos) {
+      GitHubApiRepos.getGitHubUser().success(function(data) {
+        $scope.gitRepos = data;
+    });
 }])

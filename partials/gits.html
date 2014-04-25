@@ -3,12 +3,20 @@
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
 
-        <ul class="records">
-          <li ng-repeat="project in gitRepos">
-            <h1>HI THAR!</h1>
-            <h3><a href="{{project.url}}">{{project.name}}</a></h3>
+        <div class="filter">
+          <input ng-model="gitFilter" type="text" class="form-control" placeholder="Filter GitHub Projects...">
+        </div>
+
+        <div id="spinner" class="spinner" style="display:none;">
+          <img ng-src="assets/img/spinner.gif">
+        </div>
+
+        <ul class="projectList">
+          <li ng-repeat="project in gitRepos | filter:gitFilter | orderBy:'updated_at':'reverse' | date:'medium'">
+            <h3><a href="{{project.html_url}}">{{project.name}}</a></h3>
             <p>{{project.description}}</p>
-            <p><a href="{{project.site}}" title="{{project.name}}">{{project.site}}</a></p>
+            <p class="small">Updated: {{project.updated_at | date:'mediumDate'}}, Language: {{project.language}}</p>
+            <p><a href="{{project.homepage}}" title="{{project.name}}">{{project.homepage}}</a></p>
           </li>
         </ul>
 

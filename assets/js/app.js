@@ -10,9 +10,8 @@ angular.module('gitApp', [
   'gitApp.controllers'
 ])
 .config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider
-  .when('/', {templateUrl: 'partials/gits.html'})
-  .otherwise({redirectTo: '/'});
+  $routeProvider.when('/', {templateUrl: 'partials/gits.html', controller: 'GitsController'});
+  $routeProvider.otherwise({redirectTo: '/'});
 
   $httpProvider.responseInterceptors.push('myHttpInterceptor');
   var spinnerFunction = function spinnerFunction(data, headersGetter) {
