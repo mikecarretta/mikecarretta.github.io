@@ -1,0 +1,24 @@
+.navbar {
+  margin-bottom: 0;
+}
+.navbar-brand img {
+  width: 60px;
+  height: 60px;
+}
+.navbar-nav {
+  > .active > a {
+    &,
+    &:hover,
+    &:focus {
+      color: @navbar-default-link-active-color;
+      background-color: @navbar-default-link-active-bg;
+      font-weight: bold;
+    }
+  }
+}
+
+.icon-brand {
+  float: left;
+  margin-top: -20px;
+  margin-right: 20px;
+}

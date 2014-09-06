@@ -1,0 +1,24 @@
+<p>{{ page.description }}</p>
+
+{% if page.button_title %}
+<p><a href="{{ page.project_url }}" class="btn btn-default btn-large">{{ page.button_title }}</a></p>
+{% endif %}
+
+<figure>
+  <img src="../../portfolio_imgs/{{ page.image1 }}" title="{{ page.image1_desc }}" class="img-responsive" />
+  <figcaption>{{ page.image1_desc }}</figcaption>
+</figure>
+
+{% if page.image2 %}
+<figure>
+  <img src="../../portfolio_imgs/{{ page.image2 }}" title="{{ page.image1_desc }}" class="img-responsive" />
+  <figcaption>{{ page.image2_desc }}</figcaption>
+</figure>
+{% endif %}
+
+{% if page.image3 %}
+<figure>
+  <img src="../../portfolio_imgs/{{ page.image3 }}" title="{{ page.image3_desc }}" class="img-responsive" />
+  <figcaption>{{ page.image3_desc }}</figcaption>
+</figure>
+{% endif %}

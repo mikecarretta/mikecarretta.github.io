@@ -1,42 +1,40 @@
-<!DOCTYPE html>
-<html ng-app="gitApp">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mike Carretta - GitHub Site</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!--[if lt IE 9]>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
-      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
-    <![endif]-->
-  </head>
-<body>
-
-  <section class="brand">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-        <hgroup>
-          <h1>Mike Carretta</h1>
-          <h2>Learning Front End Development</h2>
-        </hgroup>
-        </div>
-      </div>
+---
+layout:     default
+title:      Home
+hero_title: Focused on Design and Front End Development
+hero_desc:  I write and design with code using HTML, CSS and JavaScript.
+slug:       home
+---
+<section class="hero">
+  <div class="container">
+    <div class="row">
+      <header class="col-md-12">
+        <h1>{{ page.hero_title }}</h1>
+        <p>{{ page.hero_desc }}</p>
+      </header>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div ng-view=""></div>
+<section>
+  <div class="container portfolio">
+    <div class="row items">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0-beta.3/angular-route.min.js"></script>
+      <header class="col-md-12">
+        <h1 class="page-header">Current Work</h1>
+      </header>
 
-  <script src="assets/js/app.js"></script>
-  <script src="assets/js/controllers.js"></script>
-  <script src="assets/js/services.js"></script>
+      {% for post in site.posts limit:3 %}
+      <div class="block">
+          <a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">
+            <figure>
+              <img src="{{ site.url }}/portfolio_imgs/{{ post.thumbnail }}" title="{{ post.title }}" class="img-responsive" />
+              <figcaption>{{ post.title }}</figcaption>
+            </figure>
+          </a>
+        </div>
+      {% endfor %}
 
-</body>
-</html>
+    </div>
+  </div>
+</section>

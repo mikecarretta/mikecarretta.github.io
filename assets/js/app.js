@@ -1,22 +1,25 @@
-'use strict';
-/**
-*  Module
-*
-* Description
-*/
-angular.module('gitApp', [
-  'ngRoute',
-  'gitApp.services',
-  'gitApp.controllers'
-])
-.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
-  $routeProvider.when('/', {templateUrl: 'partials/gits.html', controller: 'GitsController'});
-  $routeProvider.otherwise({redirectTo: '/'});
+(function(){
+  // code
+  $('.filters a').click(function() {
+    $('.filters .active').removeClass('active');
+    $(this).parent().addClass('active');
 
-  $httpProvider.responseInterceptors.push('myHttpInterceptor');
-  var spinnerFunction = function spinnerFunction(data, headersGetter) {
-    $("#spinner").show();
-    return data;
-  };
-  $httpProvider.defaults.transformRequest.push(spinnerFunction);
-}]);
+    var filterVal = $(this).text().toLowerCase().replace(/ /g,'-');
+
+    if(filterVal == 'all') {
+      $('.items div').fadeIn('slow').removeClass('hidden');
+    } else {
+
+      $('.items div').each(function() {
+        if(!$(this).hasClass(filterVal)) {
+          $(this).fadeOut('normal').addClass('hidden');
+        } else {
+          $(this).fadeIn('slow').removeClass('hidden');
+        }
+      });
+    }
+
+    return false;
+
+  });
+}());

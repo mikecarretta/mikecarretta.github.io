@@ -1,0 +1,57 @@
+.block img,
+.post-content img,
+.btn {
+  -webkit-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2),0 1px 2px 0 rgba(0,0,0,0.2);
+     -moz-box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2),0 1px 2px 0 rgba(0,0,0,0.2);
+          box-shadow: 0 1px 1px 1px rgba(0,0,0,0.2),0 1px 2px 0 rgba(0,0,0,0.2);
+}
+.btn {
+  border: none;
+}
+.portfolio {
+  a {
+    color: #383838;
+  }
+  a:hover {
+    color: #1e1e1e;
+    text-decoration: none;
+  }
+  figcaption {
+    text-align: center;
+    padding: 12px 0;
+  }
+  .item img {
+    margin: 0 auto;
+  }
+}
+.portfolio .block {
+  width: 100%;
+  padding: 14px;
+}
+@media screen and (min-width: 480px) {
+  .portfolio .block {
+    width: 50%;
+    float: left;
+  }
+}
+@media screen and (min-width: @screen-sm-min) {
+  .portfolio .block {
+    width: 50%;
+    float: left;
+  }
+}
+@media screen and (min-width: @screen-md-min) {
+  .portfolio .block {
+    width: 33.33%;
+    float: left;
+  }
+}
+@media screen and (min-width: @screen-lg-min) {
+  .portfolio .block {
+    width: 33.33%;
+    float: left;
+  }
+}
+.filters {
+  padding-bottom: 20px;
+}

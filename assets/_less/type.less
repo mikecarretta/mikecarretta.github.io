@@ -1,0 +1,23 @@
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: (@line-height-computed / 2);
+  margin-bottom: @line-height-computed;
+}
+p {
+  margin: 0 0 @line-height-computed;
+}
+
+// Page header
+// -------------------------
+.page-header {
+  font-family: 'Merriweather', Helvetica Neue, Helvetica, Arial, serif;
+  border-bottom: 3px solid #dbdbdb;
+  a {
+    color: @gray-dark;
+  }
+  a:hover {
+    color: @brand-primary;
+    text-decoration: none;
+  }
+}

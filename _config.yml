@@ -1,0 +1,17 @@
+# Author Detials
+title:            Mike Carretta
+tagline:          Mike Carretta Portfolio
+url:
+description:      This is a barebones Jekyll theme to build a portfolio and is easy to customize.
+twitter_username:
+github_username:
+
+navbar_icon:      images/navbar_icon.svg # 60px/60px or square
+
+# Build settings
+markdown:         kramdown
+
+# Permalinks
+permalink: ":categories/:title/"
+
+exclude:          [".gitignore", "bower.json", "gruntfile.js", "package.json", "node_modules", "app", "README.md", "_less", "json", "archive"]

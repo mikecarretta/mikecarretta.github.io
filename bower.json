@@ -1,10 +1,13 @@
 {
-  "name": "mikecarretta",
-  "version": "0.0.1",
+  "name": "Mike Carretta Portfolio",
+  "version": "0.3.0",
+  "license": "MIT",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
   "dependencies": {
-    "bootstrap": "~3.1",
-    "Font-Awesome": "4.0.3",
-    "jquery": "~1.10.0",
-    "handlebars": "*"
+    "bootstrap": "~3.2.0",
+    "jquery": "~1.11.0"
   }
 }
